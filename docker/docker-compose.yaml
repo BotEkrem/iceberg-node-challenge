@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres:/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=iceberg_challenge_secret
+      - POSTGRES_USER=iceberg_challenge_user
+      - POSTGRES_DB=iceberg_challenge_db
