@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec ts-node --project=\"./tsconfig.json\" -r tsconfig-paths/register main.ts"
+    "start": "nodemon --exec ts-node --project=\"./tsconfig.json\" -r tsconfig-paths/register main.ts",
+    "generate": "ts-node --project=\"./tsconfig.json\" -r tsconfig-paths/register .\\sample\\initializer.ts"
   },
   "keywords": [],
   "author": "",
