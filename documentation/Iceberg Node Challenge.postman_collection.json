@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "8a338421-8b22-4b64-9bbc-41fd292ed6bc",
+		"name": "Iceberg Node Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Ekrem\",\r\n    \"email\": \"ekrem@botekrem.dev\",\r\n    \"password\": \"123456789Asd!\",\r\n    \"confirmPassword\": \"123456789Asd!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ekrem@botekrem.dev\",\r\n    \"password\": \"123456789Asd!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/auth/me",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Personal Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"Ekrem2\",\r\n    \"username\": \"username2\",\r\n    \"birthday\": \"2024-01-18T20:44:36.888Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/personal",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"personal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Security Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"123456789Asd%\",\r\n    \"confirmPassword\": \"123456789Asd%\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/security",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"security"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Account",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/auth/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Blog",
+			"item": [
+				{
+					"name": "All Blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/blog/all?search=blog&category=Business",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"blog",
+								"all"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "blog"
+								},
+								{
+									"key": "category",
+									"value": "Business"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/blog/my-blogs",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"blog",
+								"my-blogs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One Blog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/blog/detail/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"blog",
+								"detail",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/blog/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"blog",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Blog 1\",\r\n    \"content\": \"Blog Description\",\r\n    \"category\": \"Business\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/blog/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"blog",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Blog 2\",\r\n    \"content\": \"Blog Description\",\r\n    \"blogId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/blog/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"blog",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Blog",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/blog/delete/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"blog",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "My Comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/comment/my-comments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"comment",
+								"my-comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"Blog Comment\",\r\n    \"blogId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/comment/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"comment",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJla3JlbUBib3Rla3JlbS5kZXYiLCJpYXQiOjE3MDU2Nzk3MjAsImV4cCI6MTcwNTY4MzMyMH0.l9cef7tE2kN_fha1M1S_tSLQi4nS6i_YfuiNrNWBXVw",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
