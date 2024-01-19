@@ -37,19 +37,21 @@ async function main() {
       password: `Person${item}!`,
     }))
 
-    const blogData1 = await blogRepository.save(blogRepository.create({
-      title: `Blog ${item} by Person${item}`,
-      content: `Blog Description ${item} by Person${item}`,
-      category: get_random(Object.values(CategoriesEnum)),
-      creator: { id: userData.id },
-    }))
+    if (item < 15) {
+      const blogData1 = await blogRepository.save(blogRepository.create({
+        title: `Blog ${item} by Person${item}`,
+        content: `Blog Description ${item} by Person${item}`,
+        category: get_random(Object.values(CategoriesEnum)),
+        creator: { id: userData.id },
+      }))
 
-    const blogData2 = await blogRepository.save(blogRepository.create({
-      title: `Blog ${item + 1} by Person${item}`,
-      content: `Blog Description ${item + 1} by Person${item}`,
-      category: get_random(Object.values(CategoriesEnum)),
-      creator: { id: userData.id }
-    }))
+      const blogData2 = await blogRepository.save(blogRepository.create({
+        title: `Blog ${item + 1} by Person${item}`,
+        content: `Blog Description ${item + 1} by Person${item}`,
+        category: get_random(Object.values(CategoriesEnum)),
+        creator: { id: userData.id }
+      }))
+    }
   }
 
   const users = await userRepository.find()
