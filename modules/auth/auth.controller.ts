@@ -1,6 +1,7 @@
 import * as express from "express";
 import {Request, Response, NextFunction} from "express";
 import * as passport from "passport";
+
 import {RegisterDto} from "@/dto/auth/register.dto";
 import {validationCheck} from "@/misc/functions/validation";
 import {ErrorObject} from "@/misc/interfaces/errorObject";
@@ -8,9 +9,13 @@ import {AppDataSource} from "@/db/data-source";
 import {User} from "@/entities/user.entity";
 import {PersonalUpdateDto} from "@/dto/auth/personalUpdate.dto";
 import {SecurityUpdateDto} from "@/dto/auth/securityUpdate.dto";
+import {Blog} from "@/entities/blog.entity";
+import {Comment} from "@/entities/comment.entity";
 
 const router = express.Router()
 const userRepository = AppDataSource.getRepository(User)
+const blogRepository = AppDataSource.getRepository(Blog)
+const commentRepository = AppDataSource.getRepository(Comment)
 
 router.post("/register", async (req: Request, res: Response, next: NextFunction) => {
   const registerData = new RegisterDto()
@@ -43,7 +48,7 @@ router.post("/register", async (req: Request, res: Response, next: NextFunction)
   }))
 
   res.json({
-    isRegistered: true
+    success: true
   })
 });
 
@@ -90,7 +95,7 @@ router.patch("/personal", async (req: Request, res: Response, next: NextFunction
   })
 
   res.json({
-    isUpdated: true
+    success: true
   })
 });
 
@@ -107,14 +112,24 @@ router.patch("/security", async (req: Request, res: Response, next: NextFunction
     });
   }
 
-  const user = await userRepository.findOneBy({ id: Number(req.user.id) })
+  const user = await userRepository.findOneBy({id: Number(req.user.id)})
   user.lastLoginDate = null
   user.password = securityUpdateData.password
 
   await userRepository.save(user)
 
   res.json({
-    isUpdated: true
+    success: true
+  })
+});
+
+router.delete("/delete", async (req: Request, res: Response, next: NextFunction) => {
+  await commentRepository.delete({creator: {id: Number(req.user.id)}})
+  await blogRepository.delete({creator: {id: Number(req.user.id)}})
+  await userRepository.delete({id: Number(req.user.id)})
+
+  res.json({
+    success: true
   })
 });
 
