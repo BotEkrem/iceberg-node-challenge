@@ -1,4 +1,13 @@
-import {AfterLoad, BeforeInsert, BeforeUpdate, Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import {
+  AfterLoad,
+  BeforeInsert,
+  BeforeUpdate,
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  PrimaryGeneratedColumn, UpdateDateColumn
+} from "typeorm";
 import {Exclude} from 'class-transformer';
 import * as argon2 from "argon2";
 
@@ -44,4 +53,13 @@ export class User {
 
   @Column({type: String, nullable: true})
   ipAddress: String;
+
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+
+  @DeleteDateColumn()
+  deletedAt: Date;
 }

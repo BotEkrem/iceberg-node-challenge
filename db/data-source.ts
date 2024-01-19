@@ -1,6 +1,10 @@
 import {DataSource} from "typeorm";
 import * as dotenv from "dotenv";
+
 import {User} from "@/entities/user.entity";
+import {Blog} from "@/entities/blog.entity";
+import {Comment} from "@/entities/comment.entity";
+
 dotenv.config();
 
 export const AppDataSource = new DataSource({
@@ -13,6 +17,8 @@ export const AppDataSource = new DataSource({
   synchronize: true,
   logging: true,
   entities: [
-    User
+    User,
+    Blog,
+    Comment
   ],
 })

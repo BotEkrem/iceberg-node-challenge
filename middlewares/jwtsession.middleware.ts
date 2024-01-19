@@ -28,7 +28,7 @@ export async function jwtSessionMiddleware(req: Request, res: Response, next: Ne
     })
 
     req.user = decodedData as User
-    if (decodedData) next()
+    if (decodedData) return next()
   }
 }
 
