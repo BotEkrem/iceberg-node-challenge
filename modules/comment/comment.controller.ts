@@ -1,9 +1,9 @@
 import * as express from "express";
 import {Request, Response, NextFunction} from "express";
 
-import {AppDataSource} from "@/db/data-source";
 import {validationCheck} from "@/misc/functions/validation";
 import {ErrorObject} from "@/misc/interfaces/errorObject";
+import {AppDataSource} from "@/db/data-source";
 import {Comment} from "@/entities/comment.entity";
 import {CreateCommentDto} from "@/dto/comment/createComment.dto";
 

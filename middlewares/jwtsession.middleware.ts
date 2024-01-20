@@ -1,5 +1,6 @@
 import {NextFunction, Request, Response} from "express";
 import * as jwt from "jsonwebtoken";
+
 import {User} from "@/types/express";
 import {User as UserEntity} from "@/entities/user.entity";
 import {AppDataSource} from "@/db/data-source";

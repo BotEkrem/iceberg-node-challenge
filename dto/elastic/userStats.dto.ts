@@ -1,4 +1,4 @@
-import {IsEnum, IsNotEmpty, IsNumber, IsString} from "class-validator";
+import {IsEnum, IsNotEmpty, IsNumber} from "class-validator";
 import {TimeRange} from "@/elastic/queries";
 
 export class UserStatsDto {
