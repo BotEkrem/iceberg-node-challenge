@@ -370,6 +370,75 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "Elastic",
+			"item": [
+				{
+					"name": "Category Rates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/elastic/category-rates",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"elastic",
+								"category-rates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/elastic/user-stats",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"elastic",
+								"user-stats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Posts By Time",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/elastic/posts-by-time?range=Year&size=30",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"elastic",
+								"posts-by-time"
+							],
+							"query": [
+								{
+									"key": "range",
+									"value": "Year"
+								},
+								{
+									"key": "size",
+									"value": "30"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"auth": {
@@ -377,7 +446,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OSwiZW1haWwiOiJla3JlbUBib3Rla3JlbS5kZXYiLCJpYXQiOjE3MDU2Nzk3MjAsImV4cCI6MTcwNTY4MzMyMH0.l9cef7tE2kN_fha1M1S_tSLQi4nS6i_YfuiNrNWBXVw",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzEsImVtYWlsIjoicGVyc29uMUBnbWFpbC5jb20iLCJpYXQiOjE3MDU3MjI4OTYsImV4cCI6MTcwNTcyNjQ5Nn0.LEJmd3lqj7QHfzy_Gj2FHWjrWukaExaYVkyBeZhEhYg",
 				"type": "string"
 			}
 		]
