@@ -1,9 +1,10 @@
 import * as express from "express";
-import {Request, Response, NextFunction} from "express";
-import {categoryRates, postsByTime, TimeRange, userStats} from "@/elastic/queries";
-import {UserStatsDto} from "@/dto/elastic/userStats.dto";
+
 import {validationCheck} from "@/misc/functions/validation";
+import {categoryRates, postsByTime, userStats, TimeRange} from "@/elastic/queries";
 import {ErrorObject} from "@/misc/interfaces/errorObject";
+import {Request, Response, NextFunction} from "express";
+import {UserStatsDto} from "@/dto/elastic/userStats.dto";
 
 const router = express.Router()
 

@@ -1,12 +1,12 @@
 import {Strategy as LocalStrategy} from "passport-local";
 import * as argon2 from "argon2";
+import * as jwt from "jsonwebtoken";
 
+import {validationCheck} from "@/misc/functions/validation";
+import {ErrorObject} from "@/misc/interfaces/errorObject";
 import {AppDataSource} from "@/db/data-source";
 import {User} from "@/entities/user.entity";
 import {LoginDto} from "@/dto/auth/login.dto";
-import {validationCheck} from "@/misc/functions/validation";
-import {ErrorObject} from "@/misc/interfaces/errorObject";
-import * as jwt from "jsonwebtoken";
 
 export default function (passport) {
   passport.use(

@@ -1,10 +1,10 @@
 import * as express from "express";
-import {Request, Response, NextFunction} from "express";
 import * as passport from "passport";
+import {Request, Response, NextFunction} from "express";
 
-import {RegisterDto} from "@/dto/auth/register.dto";
 import {validationCheck} from "@/misc/functions/validation";
 import {ErrorObject} from "@/misc/interfaces/errorObject";
+import {RegisterDto} from "@/dto/auth/register.dto";
 import {AppDataSource} from "@/db/data-source";
 import {User} from "@/entities/user.entity";
 import {PersonalUpdateDto} from "@/dto/auth/personalUpdate.dto";

@@ -20,7 +20,7 @@ npm run generate
 # Sync DB to ElasticSearch
 npm run elastic-sync
 
-# To purge all ElasticSearch Indices
+# To purge all ElasticSearch Indices (optional)
 npm run elastic-purge
 
 # Finally, to start the app
@@ -28,7 +28,7 @@ npm start
 ```
 
 ## ORM and Raw Query
-I used ORM in the Auth module and Raw Query in other modules. I thought it would be better for information if you saw both. You can see them from `modules` folder.
+I used ORM in the Auth module and Raw Query in other modules. I thought it would be better for information if you saw both. You can see them in `modules` folder.
 
 ## Postman Documentation
-You can find Postman Collection file at `documentation` folder.
+You can find Postman Collection file in `documentation` folder.
