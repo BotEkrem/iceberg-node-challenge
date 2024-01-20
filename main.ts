@@ -1,4 +1,3 @@
-// GLOBAL IMPORTS
 import "reflect-metadata"
 import * as passport from "passport";
 import * as express from "express";
@@ -6,7 +5,6 @@ import * as dotenv from "dotenv";
 import * as bodyParser from "body-parser";
 import {Express, Request, Response} from "express";
 
-// LOCAL IMPORTS
 import {AppDataSource} from "@/db/data-source";
 import {jwtSessionMiddleware} from "@/middlewares/jwtsession.middleware";
 import passportStrategy from "@/strategy/passport.strategy";
@@ -14,6 +12,7 @@ import passportStrategy from "@/strategy/passport.strategy";
 import AuthController from "@/modules/auth/auth.controller";
 import BlogController from "@/modules/blog/blog.controller";
 import CommentController from "@/modules/comment/comment.controller";
+import ElasticController from "@/modules/elastic/elastic.controller";
 
 dotenv.config();
 passportStrategy(passport)
@@ -27,6 +26,7 @@ app.use(jwtSessionMiddleware)
 app.use("/auth", AuthController)
 app.use("/blog", BlogController)
 app.use("/comment", CommentController)
+app.use("/elastic", ElasticController)
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello world 👋");
