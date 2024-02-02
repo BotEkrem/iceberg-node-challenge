@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --exec ts-node --project=\"./tsconfig.json\" -r tsconfig-paths/register main.ts",
-    "generate": "ts-node --project=\"./tsconfig.json\" -r tsconfig-paths/register .\\sample\\initializer.ts",
-    "elastic-sync": "ts-node --project=\"./tsconfig.json\" -r tsconfig-paths/register .\\elastic\\sync.ts",
-    "elastic-purge": "ts-node --project=\"./tsconfig.json\" -r tsconfig-paths/register .\\elastic\\purge.ts",
-    "elastic-queries": "ts-node --project=\"./tsconfig.json\" -r tsconfig-paths/register .\\elastic\\queries.ts"
+    "generate": "ts-node --project=\"./tsconfig.json\" -r tsconfig-paths/register ./sample/initializer.ts",
+    "elastic-sync": "ts-node --project=\"./tsconfig.json\" -r tsconfig-paths/register ./elastic/sync.ts",
+    "elastic-purge": "ts-node --project=\"./tsconfig.json\" -r tsconfig-paths/register ./elastic/purge.ts",
+    "elastic-queries": "ts-node --project=\"./tsconfig.json\" -r tsconfig-paths/register ./elastic/queries.ts"
   },
   "keywords": [],
   "author": "",
